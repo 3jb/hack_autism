@@ -1,4 +1,4 @@
-## These are jsut place holders - 
+## These are just place holders - 
 
 plesae replace any element [to/with] you own content.
 

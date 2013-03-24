@@ -13,6 +13,7 @@ Oracle.Map = new function() {
         rand_y += Math.ceil(Math.random() * 230);
 	my.placeAgent(i, img, rand_x, rand_y);});
   };
+
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").
       attr("src", "images/" + image_path).

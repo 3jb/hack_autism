@@ -6,6 +6,7 @@
     <script src="js/map.js"></script>
     <script src="js/dialog.js"></script>
     <script src="js/score.js"></script>
+    <script src="js/main.js"></script>
     
     <title>demo</title>
   </head>
@@ -15,16 +16,7 @@
     </center>
     <div id="canvas"></div>
     <script>
-      Oracle.agents=["mario.png", "sonic.png", "tails.png"];
-      /*Oracle.onMapClick = function() {
-	    Oracle.Dialog.place($(this).data("agent-id"));
-	    };*/
-      Oracle.Map.place(function() { 
-	      Oracle.Dialog.place($(this).data("agent-id"));
-	      });
-
-      //Oracle.Dialog.place();
-      //Oracle.Score.place();
+      Oracle.Actions.play();
     </script>
   </body>
 </html>

@@ -34,8 +34,20 @@ Oracle.Dialog= new function() {
           Oracle.Actions.showMap();
           return;
         }
-	      Oracle.Dialog.renderStep(qData, value.nextStep);
-	    }).
+    	  var img_path = qData.agent.name + "_L_";
+    	  switch (value.response_quality) {
+    	    case -2: img_path += "mad.png";
+    		     break;
+    	    case -1: img_path += "sad.png";
+    		     break;
+    	    case 1: img_path += "neutral.png";
+    		     break;
+    	    case 2: img_path += "happy.png";
+    		     break;
+    	  }
+  	    Oracle.Dialog.renderStep(qData, value.nextStep);
+  	     $("#agent_img").attr("src", "images/assets/" + img_path);
+       }).
 	    appendTo(my_options);
     });
   };
@@ -50,6 +62,7 @@ Oracle.Dialog= new function() {
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").
       attr("src", "images/assets/" + image_path).
+      attr("id", "agent_img").
       data("agent-id", agent_id).
       addClass("agent").
       css("left", x).

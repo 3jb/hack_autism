@@ -33,14 +33,35 @@ GEM
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    faraday (0.8.6)
+      multipart-post (~> 1.1)
+    google_drive (0.3.3)
+      nokogiri (>= 1.4.4, != 1.5.2, != 1.5.1)
+      oauth (>= 0.3.6)
+      oauth2 (>= 0.5.0)
+    httpauth (0.2.0)
     i18n (0.5.0)
     json (1.7.7)
+    jwt (0.1.5)
+      multi_json (>= 1.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.21)
+    multi_json (1.6.1)
+    multi_xml (0.5.3)
+    multipart-post (1.2.0)
+    nokogiri (1.5.6)
+    oauth (0.4.7)
+    oauth2 (0.9.0)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.2.8)
@@ -78,6 +99,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  google_drive
   pg
   rails (= 3.0.9)
   sqlite3

@@ -6,7 +6,7 @@ Oracle.Quests = new function() {
       agent: {
         name: "Tom",
         agentId: 1
-      }
+      },
       result: {
         1: 5, // 1 = Tom's agentId. 5 = Tom's state after quest is complete
         2: 4 // 2 = Amy's agentId. 4 = Tom's state
@@ -29,7 +29,7 @@ Oracle.Quests = new function() {
               agentEmotion: "happy"
             },
           ]
-        }
+        },
         2: {
           agentText: "What are you looking for, %player%?",
           options: [
@@ -54,7 +54,7 @@ Oracle.Quests = new function() {
   my.getAvailableQuests = function(agentStates) {
     return {
       1: {
-        questId: 10, // 1 = Tom's agentId, 1 = questId of available quest for Tom
+        questId: 1, // 1 = Tom's agentId, 1 = questId of available quest for Tom
         name: "Tom"
       },
       2: {

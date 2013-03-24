@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130324163230) do
+ActiveRecord::Schema.define(:version => 20130324193712) do
+
+  create_table "clicks", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "state_id"
+    t.integer  "resp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oracles", :force => true do |t|
     t.integer  "resp_id"

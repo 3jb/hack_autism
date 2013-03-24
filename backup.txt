@@ -1,0 +1,46 @@
+ActiveRecord::Schema.define(:version => 20130323204405) do
+
+  create_table "responses", :force => true do |t|
+    t.integer  "quality"
+    t.string   "sayit"
+    t.integer  "next_state"
+    t.integer  "current_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "next_say"
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.string   "toonsay"
+    t.integer  "best_resp"
+    t.integer  "good_resp"
+    t.integer  "bad_resp"
+    t.integer  "worst_resp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+end
+
+
+
+
+1.9.2p320 :276 > Response.all
+ => [#<Response id: 1, quality: 1, sayit: "Hi.", next_state: 2, current_state: 1, created_at: "2013-03-23 20:56:58", updated_at: "2013-03-23 21:05:11", next_say: "Will you do me a favor?">, #<Response id: 2, quality: 2, sayit: "Hi, my name is Isaac.", next_state: 2, current_state: 1, created_at: "2013-03-23 20:58:24", updated_at: "2013-03-23 21:05:37", next_say: "Will you do me a favor?">, #<Response id: 3, quality: -1, sayit: "Give me something.", next_state: 1, current_state: 1, created_at: "2013-03-23 20:59:26", updated_at: "2013-03-23 21:06:02", next_say: "I don't want to talk.">, #<Response id: 4, quality: -2, sayit: "You are bad.", next_state: 1, current_state: 1, created_at: "2013-03-23 21:00:03", updated_at: "2013-03-23 21:06:09", next_say: "I don't want to talk.">, #<Response id: 5, quality: 1, sayit: "Yes.", next_state: 3, current_state: 2, created_at: "2013-03-23 21:09:08", updated_at: "2013-03-23 21:09:08", next_say: "Ask AMY for the password.">, #<Response id: 6, quality: 2, sayit: "Yes, I would like to help.", next_state: 3, current_state: 2, created_at: "2013-03-23 21:09:43", updated_at: "2013-03-23 21:09:43", next_say: "Ask AMY for the password.">, #<Response id: 7, quality: -1, sayit: "No.", next_state: 2, current_state: 2, created_at: "2013-03-23 21:10:34", updated_at: "2013-03-23 21:10:34", next_say: "I don't want to talk.">, #<Response id: 8, quality: -2, sayit: "No. You are dumb.", next_state: 2, current_state: 2, created_at: "2013-03-23 21:11:04", updated_at: "2013-03-23 21:11:04", next_say: "I don't want to talk.">, #<Response id: 9, quality: 2, sayit: "Okay.", next_state: 4, current_state: 3, created_at: "2013-03-23 21:16:10", updated_at: "2013-03-23 21:24:18", next_say: "Hi.">, #<Response id: 10, quality: -1, sayit: "What is the password?", next_state: 4, current_state: 4, created_at: "2013-03-23 21:19:39", updated_at: "2013-03-23 21:26:20", next_say: "I don't know you.">, #<Response id: 11, quality: 1, sayit: "Hi.", next_state: 5, current_state: 4, created_at: "2013-03-23 21:20:41", updated_at: "2013-03-23 21:26:52", next_say: "I'm Amy.">, #<Response id: 12, quality: 2, sayit: "Hi, my name is Isaac.", next_state: 5, current_state: 4, created_at: "2013-03-23 21:23:08", updated_at: "2013-03-23 21:28:54", next_say: "Nice to meet you, Isaac. I'm Amy.">, #<Response id: 13, quality: 1, sayit: "Tom asked me to get the password from you.", next_state: 6, current_state: 5, created_at: "2013-03-23 21:31:50", updated_at: "2013-03-23 21:32:06", next_say: "Tell Tom that the password is Oranges.">, #<Response id: 14, quality: -1, sayit: "I want the password.", next_state: 5, current_state: 5, created_at: "2013-03-23 21:33:01", updated_at: "2013-03-23 21:33:01", next_say: "I don't know you well enough.">, #<Response id: 15, quality: 2, sayit: "Okay.", next_state: 7, current_state: 6, created_at: "2013-03-23 21:38:29", updated_at: "2013-03-23 21:38:59", next_say: "Hi, Isaac.">, #<Response id: 16, quality: -1, sayit: "Amy told me the password. It's Apples.", next_state: 7, current_state: 7, created_at: "2013-03-23 21:47:23", updated_at: "2013-03-23 21:47:23", next_say: "What? I don't know anything about apples.">, #<Response id: 17, quality: -2, sayit: "Apples.", next_state: 7, current_state: 7, created_at: "2013-03-23 21:48:36", updated_at: "2013-03-23 21:48:36", next_say: "Apples? What about apples?">, #<Response id: 18, quality: -1, sayit: "Oranges.", next_state: 7, current_state: 7, created_at: "2013-03-23 21:52:55", updated_at: "2013-03-23 21:52:55", next_say: "What? I don't know anything about oranges.">, #<Response id: 19, quality: 2, sayit: "Amy told me the password. It's oranges.", next_state: 8, current_state: 7, created_at: "2013-03-23 21:53:53", updated_at: "2013-03-23 21:53:53", next_say: "Thanks! You have been a big help.">] 
+1.9.2p320 :277 > 
+
+1.9.2p320 :277 > State.all
+ => [#<State id: 1, name: "Tom", toonsay: "Hi.", best_resp: 2, good_resp: 1, bad_resp: 3, worst_resp: 4, created_at: "2013-03-23 20:54:51", updated_at: "2013-03-23 21:00:49">, #<State id: 2, name: "Tom", toonsay: "Will you do me a favor?", best_resp: 6, good_resp: 5, bad_resp: 7, worst_resp: 8, created_at: "2013-03-23 21:02:39", updated_at: "2013-03-23 21:08:00">, #<State id: 3, name: "Tom", toonsay: "Ask AMY for the password.", best_resp: 9, good_resp: nil, bad_resp: nil, worst_resp: nil, created_at: "2013-03-23 21:14:24", updated_at: "2013-03-23 21:14:24">, #<State id: 4, name: "Amy", toonsay: "Hi.", best_resp: 12, good_resp: 11, bad_resp: 10, worst_resp: nil, created_at: "2013-03-23 21:18:20", updated_at: "2013-03-23 21:18:20">, #<State id: 5, name: "Amy", toonsay: "I'm Amy.", best_resp: 13, good_resp: 14, bad_resp: nil, worst_resp: nil, created_at: "2013-03-23 21:30:27", updated_at: "2013-03-23 21:30:27">, #<State id: 6, name: "Amy", toonsay: "Tell Tom that the password is Oranges.", best_resp: 14, good_resp: nil, bad_resp: nil, worst_resp: nil, created_at: "2013-03-23 21:35:34", updated_at: "2013-03-23 21:35:34">, #<State id: 7, name: "Tom", toonsay: "Hi, Isaac.", best_resp: 18, good_resp: 19, bad_resp: 16, worst_resp: 17, created_at: "2013-03-23 21:42:46", updated_at: "2013-03-23 21:42:46">, #<State id: 8, name: "Tom", toonsay: "Thanks! You have been a big help.", best_resp: nil, good_resp: nil, bad_resp: nil, worst_resp: nil, created_at: "2013-03-23 21:56:58", updated_at: "2013-03-23 21:56:58">] 
+1.9.2p320 :278 > 
+
+
+
+
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  agent_id: 1
+  state: 1
+  emotion: MyString
+  agent_text: MyString
+
+two:
+  name: MyString
+  agent_id: 1
+  state: 1
+  emotion: MyString
+  agent_text: MyString

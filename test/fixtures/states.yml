@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  toonsay: MyString
+  best_resp: 1
+  good_resp: 1
+  bad_resp: 1
+  worst_resp: 1
+
+two:
+  name: MyString
+  toonsay: MyString
+  best_resp: 1
+  good_resp: 1
+  bad_resp: 1
+  worst_resp: 1

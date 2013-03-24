@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  resp_id: 
+  advice: MyString
+
+two:
+  resp_id: 
+  advice: MyString

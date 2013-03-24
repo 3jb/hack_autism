@@ -13,6 +13,7 @@ Oracle.Dialog= new function() {
     my.place(quest.agent, 
 	     quest.agent.name + "_L_neutral.png");
 
+       console.log(quest);
     my.renderStep(quest, 1);
     // on click move to next step
     
@@ -29,12 +30,14 @@ Oracle.Dialog= new function() {
     my_options.empty();
     $.each(step.options, function(index, value) {
       $("<li>").
-	html(value.text).
-	css("cursor", "pointer").
-	on("click", function() {
-	  Oracle.Dialog.renderStep(qData, value.nextState);
-	}).
-	appendTo(my_options);
+    	html(value.text).
+    	css("cursor", "pointer").
+    	on("click", function() {
+    	  console.log("clicked");
+    	  console.log(value);
+	      Oracle.Dialog.renderStep(qData, value.nextStep);
+	    }).
+	    appendTo(my_options);
     });
     
   };

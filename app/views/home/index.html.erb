@@ -1,28 +1,13 @@
-<%= @initn %>
+<%= @talk_value %>
 <BR><BR>
 
-<%= @state.name %> says, "<%= @talk%>"
+<%= @state.name %> says, "<%= @talk %>"
 
 <BR><BR><BR>
 
 Your response?<BR>
 <% @choices.each do |ch| %>
-	<%= link_to ch.sayit, home_path(:n=>ch.next_state.to_s,:l=>ch.current_state.to_s) %>
+	<%= link_to ch.sayit, home_path(:state=>ch.next_state.to_s,:response=>ch.current_state.to_s) %>
 	<BR><BR>
 <% end %>
 
-
-<%= @tomsays1 %>
-<BR>
-<%= @usersays1 %>
-<BR><BR><BR>
-
-<%= @amysays2 %>
-<BR>
-<%= @usersays2 %>
-<BR><BR><BR>
-
-<%= @tomsays3 %>
-<BR>
-<%= @ysersays3 %>
-<BR><BR><BR>

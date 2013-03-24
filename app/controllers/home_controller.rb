@@ -4,56 +4,22 @@ class HomeController < ApplicationController
 		responses = Response.all
 		states = State.all
 
-		@initn = params[:n]
-		@newsay = params[:l]
+		@talk_value = params[:state]
+		@newsay = params[:response]
 
-		if @initn.blank?
-			@state = State.find_by_s_id(1)
-		else
-			@state = State.find_by_s_id(@initn)
-		end
+		@talk_value.blank? ? @state = State.find_by_s_id(1) : @state = State.find_by_s_id(@talk_value)
 		@choices = Response.where(:current_state=>@state.s_id)
 
-		if @newsay.blank?
-			@talk = @state.toonsay
-		else
-			@talk = Response.where(:current_state=>@newsay,:next_state=>@initn).first.next_say
-		end
+		@newsay.blank? ? @talk = @state.toonsay : @talk = Response.where(:current_state=>@newsay,:next_state=>@talk_value).first.next_say
 
-		# @tomsays1 = []
-		# @usersays1 = []
-		# states.each_with_index do |x,i|
-		# 	@tomsays1 << x.toonsay if i < 3
-		# end
-		# responses.each_with_index do |x,i|
-		# 	@usersays1 << x.sayit if i < 10
-		# end
+# # params
+# 		render :json => @talk_value
+# 		render :json => @newsay
 
-		# @convo1 = {:name=>"Tom",:speech=>@tomsays1[0],:choices=>@usersays1[0..3]}
-
-		# @convo2 = {:choice2=>@tomsays1[1]}
-
-		# @convo3 = {:choice3=>@tomsays1[2]}
-
-		# @amysays2 = []
-		# @usersays2 = []
-		# states.each_with_index do |x,i|
-		# 	@amysays2 << x.toonsay if (i >= 3) && (i < 7)
-		# end
-		# responses.each_with_index do |x,i|
-		# 	@usersays2 << x.sayit if (i >= 10) && (i < 16)
-		# end
-
-		# @tomsays3 = []
-		# @usersays3 = []
-		# states.each_with_index do |x,i|
-		# 	@tomsays3 << x.toonsay if i >= 7
-		# end
-		# responses.each_with_index do |x,i|
-		# 	@usersays3 << x.sayit if i >= 16
-		# end
-
-
+# # values for State (state) and Response (talk is NPC output, choices belong to User)
+# 		render :json => @talk
+# 		render :json => @state
+# 		render :json => @choices
 
 	end
 

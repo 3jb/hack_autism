@@ -8,9 +8,10 @@ Oracle.Dialog= new function() {
 //  });
 
   my.startQuest = function(quest) {
-    my.place(quest.questId);
     
     var questData = Oracle.Quests.getQuest(quest.questId);
+    my.place(questData.agent, 
+	     questData.agent.name + "_L_neutral.png");
     // init quest one
     my.renderStep(questData, 1);
     // on click move to next step
@@ -38,9 +39,9 @@ Oracle.Dialog= new function() {
     
   };
   
-  my.place = function(id) {
+  my.place = function(agent, img_path) {
       $("#canvas").empty();
-      my.placeAgent(id, Oracle.agents[id], 520, 170);
+      my.placeAgent(agent.agentid, img_path, 400, 170);
       my.placePrompt("", 50, 35);
       my.placeOptions([], 50, 170);
   };
@@ -48,7 +49,7 @@ Oracle.Dialog= new function() {
   
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").
-      attr("src", "images/" + image_path).
+      attr("src", "images/assets/" + image_path).
       data("agent-id", agent_id).
       addClass("agent").
       css("left", x).

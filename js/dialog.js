@@ -15,7 +15,6 @@ Oracle.Dialog= new function() {
 		       "option_three"], 50, 170);
   };
 
-  
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").
       attr("src", "images/" + image_path).

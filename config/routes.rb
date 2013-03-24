@@ -4,4 +4,5 @@ Hackauts2::Application.routes.draw do
 
   get "/home" => 'Home#index', :as => :home
 
+
 end

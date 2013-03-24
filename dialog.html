@@ -3,7 +3,9 @@
   <head>
     <link rel="stylesheet" type="text/css" href="oracle.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/map.js"></script>
     <script src="js/dialog.js"></script>
+    <script src="js/score.js"></script>
     
     <title>demo</title>
   </head>
@@ -13,12 +15,16 @@
     </center>
     <div id="canvas"></div>
     <script>
-      Oracle.Dialog.placeAgent(1, "mario.png", 520, 170);
-      Oracle.Dialog.placePrompt("Well, hello ", 50, 35);
-      Oracle.Dialog.placeOptions(["option_one",
-				  "option_two",
-				  "option_three"], 50, 170);
-      
+      Oracle.agents=["mario.png", "sonic.png", "tails.png"];
+      /*Oracle.onMapClick = function() {
+	    Oracle.Dialog.place($(this).data("agent-id"));
+	    };*/
+      Oracle.Map.place(function() { 
+	      Oracle.Dialog.place($(this).data("agent-id"));
+	      });
+
+      //Oracle.Dialog.place();
+      //Oracle.Score.place();
     </script>
   </body>
 </html>

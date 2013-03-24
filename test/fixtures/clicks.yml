@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  state_id: 1
+  resp_id: 1
+  counter: 1
+
+two:
+  user_id: 1
+  state_id: 1
+  resp_id: 1
+  counter: 1

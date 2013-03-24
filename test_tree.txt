@@ -1,0 +1,89 @@
+State: id=1, name='Tom', toonsay='Hi.', best_resp=1, good_resp=2, bad_resp=3, worst_resp = 4
+
+Response: id=1/2/3/4, quality=2/1/-1/-2, sayit="Hi."/"Hi, my name is #{User.name}."/"Give me something."/"You are bad.", current_state = 1/1/1/1, next_state = 2/2/1/1, next_say="I don't want to talk."//"Will you do me a favor?"
+
+TOM
+“Hi.”
+
+
+PLAYER
++”Hi.”
+++”Hi, my name is Isaac.”
+-”Give me something.”
+--”You are bad.”
+
+-TOM
+“I don’t want to talk.”
+
+
+
++TOM
+“Will you do me a favor?”
+
+PLAYER
++”Yes”
+++”Yes, I would like to help.”
+- “No”
+-- “No. You are dumb.”
+
+-TOM
+“I don’t want to talk.”
+
+
+
++TOM
+“Ask AMY for the password.”
+
+PLAYER is assigned task.  --- Okay.
+
+AMY
+“Hi.”
+
+PLAYER
+-”What is the password”
++”Hi”
+++”Hi, my name is Isaac”
+
+-AMY
+“I don’t know you.”
+
+
+
++AMY
+”I’m Amy”
+
+++AMY
+“Nice to meet you Isaac. I’m Amy.”
+
+PLAYER
++”Tom asked me to get the password from you.”
+-”I want the password.”
+
+-AMY
+“I don’t know you well enough.”
+
+
+
+
++AMY
+“Tell Tom that the password is Oranges”
+
+PLAYER travels to TOM
+
+TOM
+“Hi Isaac.”
+
+PLAYER
+-”Amy told me the password. It’s apples.""
+--”Apples”
++”Oranges”
+++”Amy told me the password. It’s oranges.
+
+-TOM
+“What? I don’t know anything about oranges.”
+“What? I don’t know anything about apples.”
+“What? I don’t know anything about bananas.”
+
++TOM
+“Thanks! You have been a big help.”
+

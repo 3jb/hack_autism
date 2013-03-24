@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  quality: 1
+  sayit: MyString
+  next_state: 1
+  current_state: 1
+
+two:
+  quality: 1
+  sayit: MyString
+  next_state: 1
+  current_state: 1

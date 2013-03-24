@@ -9,15 +9,20 @@
     <script src="javascripts/quests.js"></script>
     <script src="javascripts/main.js"></script>
     
+    <script>
+      $(document).ready(function() { Oracle.Actions.play(); });
+    </script>
+    
     <title>demo</title>
   </head>
   <body>
     <center>
       <h3>Emotional Oracle</h3>
     </center>
+    <div id="mapCanvas"></div>
     <div id="canvas"></div>
-    <script>
-      Oracle.Actions.play();
-    </script>
+    
+    
+    <button id="renderMap">Render Map</button>
   </body>
 </html>

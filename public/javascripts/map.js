@@ -3,26 +3,29 @@ var Oracle = {};
 
 Oracle.Map = new function() {
   var my = {};
-
-  my.place = function() {
-      var rand_x = 0, rand_y = 0;
-      $.each(Oracle.agents, function(i,img) {
-	//max x= 530px max_y = 240
-	rand_x = 10; rand_y = 10;
-        rand_x += Math.ceil(Math.random() * 520);
-        rand_y += Math.ceil(Math.random() * 230);
-	my.placeAgent(i, img, rand_x, rand_y);});
+  
+  my.refresh = function() {
+    for (var i in Oracle.agents) {
+      var agentData = Oracle.agents[i];
+      Oracle.Actions.findAgent(i).attr("src", "images/assets/" + agentData.name + "_L_" + agentData.emotionalState + ".png");
+    }
+  };
+  
+  my.render = function() {
+    my.createAgent(1, 160, 200);
+    my.createAgent(2, 350, 20);
+	  
+	  my.refresh();
   };
 
-  my.placeAgent = function(agent_id, image_path, x, y) {
+  my.createAgent = function(agent_id, x, y) {
     $("<img>").
-      attr("src", "images/" + image_path).
       data("agent-id", agent_id).
       addClass("agent").
       css("left", x).
       css("top", y).
       on("click", Oracle.Actions.onMapClick).
-      appendTo($("#canvas"));
+      appendTo($("#mapCanvas"));
   };
   
   return my;

@@ -18,8 +18,8 @@ Oracle.Actions = new function() {
     var questData = $(this).data("quest");
     console.log(questData);
     Oracle.Quests.getQuest(questData.questId, function(result) {
-      Oracle.Dialog.startQuest(result);
-      my.showDialog();      
+      my.showDialog();
+      Oracle.Dialog.startQuest(result)
     });
   };
   

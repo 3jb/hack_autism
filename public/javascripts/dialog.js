@@ -8,12 +8,12 @@ Oracle.Dialog= new function() {
 //  });
 
   my.startQuest = function(quest) {
-    
+
     var questData = Oracle.Quests.getQuest(quest.questId);
     my.place(questData.agent, 
 	     questData.agent.name + "_L_neutral.png");
-    // init quest one
-    my.renderStep(questData, 1);
+
+    my.renderStep(quest, 1);
     // on click move to next step
     
   };

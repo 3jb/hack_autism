@@ -10,8 +10,8 @@ Oracle.Dialog= new function() {
   my.startQuest = function(quest) {
 
     var questData = Oracle.Quests.getQuest(quest.questId);
-    my.place(questData.agent, 
-	     questData.agent.name + "_L_neutral.png");
+    my.place(quest.agent, 
+	     quest.agent.name + "_L_neutral.png");
 
     my.renderStep(quest, 1);
     // on click move to next step

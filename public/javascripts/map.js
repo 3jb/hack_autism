@@ -7,13 +7,13 @@ Oracle.Map = new function() {
   my.refresh = function() {
     for (var i in Oracle.agents) {
       var agentData = Oracle.agents[i];
-      Oracle.Actions.findAgent(i).attr("src", "images/assets/" + agentData.name + "_L_" + agentData.emotionalState + ".png");
+      Oracle.Actions.findAgent(i).attr("src", "images/assets/" + agentData.name + "_S_" + agentData.emotionalState + ".png");
     }
   };
   
   my.render = function() {
-    my.createAgent(1, 160, 200);
-    my.createAgent(2, 350, 20);
+    my.createAgent(1, 170, 250);
+    my.createAgent(2, 400, 60);
 	  
 	  my.refresh();
   };
@@ -25,7 +25,7 @@ Oracle.Map = new function() {
       css("left", x).
       css("top", y).
       on("click", Oracle.Actions.onMapClick).
-      appendTo($("#mapCanvas"));
+      appendTo($("#mapCanvas"));  
   };
   
   return my;

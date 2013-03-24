@@ -15,8 +15,12 @@ Oracle.Actions = new function() {
   };
   
   my.onMapClick = function() {
-    Oracle.Dialog.startQuest($(this).data("quest"));
-    my.showDialog();
+    var questData = $(this).data("quest");
+    console.log(questData);
+    Oracle.Quests.getQuest(questData.questId, function(result) {
+      Oracle.Dialog.startQuest(result);
+      my.showDialog();      
+    });
   };
   
   my.findAgent = function(agentId) {

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323204405) do
+ActiveRecord::Schema.define(:version => 20130323234851) do
+
+  create_table "oracles", :force => true do |t|
+    t.integer  "resp_id"
+    t.string   "advice"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "responses", :force => true do |t|
     t.integer  "quality"

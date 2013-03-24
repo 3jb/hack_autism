@@ -249,3 +249,88 @@ responses:
     - '2013-03-23 21:53:53.765334'
     - '2013-03-23 21:53:53.765334'
     - Thanks! You have been a big help.
+
+---
+oracles:
+  columns:
+  - id
+  - resp_id
+  - advice
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - Tom will talk to you now.
+    - '2013-03-23 23:53:32.796365'
+    - '2013-03-23 23:53:32.796365'
+  - - 2
+    - 2
+    - Tom is happy you told him your name.
+    - '2013-03-23 23:54:19.091571'
+    - '2013-03-23 23:54:19.091571'
+  - - 3
+    - 3
+    - Tom only gives things to people he knows; introduce yourself.
+    - '2013-03-23 23:55:43.929402'
+    - '2013-03-23 23:55:43.929402'
+  - - 4
+    - 4
+    - Tom will talk to you if you say 'hi.'
+    - '2013-03-23 23:56:39.047973'
+    - '2013-03-23 23:56:39.047973'
+  - - 5
+    - 5
+    - Tom doesn't like when you're rude. Introduce yourself again.
+    - '2013-03-23 23:59:56.483905'
+    - '2013-03-24 00:00:35.738660'
+  - - 6
+    - 6
+    - Great job! Now go see Amy.
+    - '2013-03-24 00:01:29.249328'
+    - '2013-03-24 00:01:29.249328'
+  - - 7
+    - 10
+    - Amy will only talk to people she knows. Introduce yourself.
+    - '2013-03-24 00:04:09.462089'
+    - '2013-03-24 00:04:09.462089'
+  - - 8
+    - 11
+    - Amy will talk to you now.
+    - '2013-03-24 00:05:10.524430'
+    - '2013-03-24 00:05:10.524430'
+  - - 9
+    - 12
+    - Amy likes knowing your name.
+    - '2013-03-24 00:05:59.499473'
+    - '2013-03-24 00:05:59.499473'
+  - - 10
+    - 13
+    - Amy will tell you the password because it is for Tom.
+    - '2013-03-24 00:07:46.233314'
+    - '2013-03-24 00:07:46.233314'
+  - - 11
+    - 14
+    - Amy wants to know why you need the password.
+    - '2013-03-24 00:09:28.454382'
+    - '2013-03-24 00:09:28.454382'
+  - - 12
+    - 16
+    - Amy told you the password is Oranges. Let Tom know.
+    - '2013-03-24 00:14:07.504505'
+    - '2013-03-24 00:14:07.504505'
+  - - 13
+    - 17
+    - You need to tell Tom that you are giving him the password, and isn't it Oranges?
+    - '2013-03-24 00:15:05.767168'
+    - '2013-03-24 00:15:05.767168'
+  - - 14
+    - 18
+    - Tom needs you to let him know you are talking about the password.
+    - '2013-03-24 00:15:43.270336'
+    - '2013-03-24 00:15:43.270336'
+  - - 15
+    - 19
+    - Great job! Now Tom can play some music!
+    - '2013-03-24 00:16:39.349113'
+    - '2013-03-24 00:16:39.349113'

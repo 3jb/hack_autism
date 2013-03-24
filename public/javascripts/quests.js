@@ -15,7 +15,8 @@ Oracle.Quests = new function() {
               text: "Tom, can I have some food",
               nextState: 2,
               agentText: "That's not a good question",
-              agentEmotion: "angry"
+              agentEmotion: "angry",
+              oracleText: "Tom is happy you told him your name"
             },
             {
               text: "Hi Tom, my name is %player%",

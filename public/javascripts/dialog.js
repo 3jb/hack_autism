@@ -25,10 +25,10 @@ Oracle.Dialog= new function() {
     	css("cursor", "pointer").
     	on("click", function() {
         if (value.nextStep < 0) {
-          if (value == -1) {
+          if (value.nextStep == -1) {
             $("#ding3_sound")[0].play();
             my.questFinished(qData.results);
-          } else if (value == -2) {
+          } else if (value.nextStep == -2) {
             
           }
           

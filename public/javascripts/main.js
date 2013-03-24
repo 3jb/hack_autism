@@ -3,36 +3,46 @@ Oracle.agents = {};
 Oracle.Actions = new function() {
   var my = {};
  
-  my.onMapClick = function() {
-    Oracle.Dialog.startQuest($(this).data("quest"));
+  my.showMap = function() {
+    $("#mapCanvas").show();
+    $("#canvas").hide();
+    Oracle.Map.refresh();
   };
   
-  var findAgent = function(agentId) {
+  my.showDialog = function() {
+    $("#mapCanvas").hide();
+    $("#canvas").show();
+  };
+  
+  my.onMapClick = function() {
+    Oracle.Dialog.startQuest($(this).data("quest"));
+    my.showDialog();
+  };
+  
+  my.findAgent = function(agentId) {
     var agents = $(".agent");
     
     for (var i in agents) {
       if ($(agents[i]).data("agentId") == agentId) {
-        return agents[i];
+        return $(agents[i]);
       }
     }
   }
 
   my.play = function() {
-    Oracle.agents = ["mario.png", "sonic.png", "tails.png"];
-    
     // some work on setting agent emotion
-    // Oracle.agents = {
-    //   1: {
-    //     name: "Tom",
-    //     image: "mario.png"
-    //   },
-    //   2: {
-    //     name: "Amy",
-    //     image: "tails.png"
-    //   }
-    // }
+    Oracle.agents = {
+      1: {
+        name: "Tom",
+        emotionalState: "neutral"
+      },
+      2: {
+        name: "Amy",
+        emotionalState: "neutral"
+      }
+    }
     
-    Oracle.Map.place();
+    Oracle.Map.render();
     
     // getAvailableQuests
     var quests = Oracle.Quests.getAvailableQuests({
@@ -42,9 +52,16 @@ Oracle.Actions = new function() {
     );
   
     for (var i in quests) {
-      var agent = $(findAgent(i)); 
+      var agent = my.findAgent(i);
       agent.data("quest", quests[i]);
     }
+    
+    my.showMap();
+    
+    $("#renderMap").click(function() {
+      Oracle.agents[1].emotionalState = "sad";
+      my.showMap();
+    });
   }
 
   return my;

@@ -33,8 +33,10 @@ Oracle.Dialog= new function() {
     	html(value.text).
     	css("cursor", "pointer").
     	on("click", function() {
-    	  console.log("clicked");
-    	  console.log(value);
+        if (value.nextStep < 0) {
+          Oracle.Actions.showMap();
+          return;
+        }
 	      Oracle.Dialog.renderStep(qData, value.nextStep);
 	    }).
 	    appendTo(my_options);

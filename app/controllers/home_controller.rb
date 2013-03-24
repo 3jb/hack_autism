@@ -8,11 +8,11 @@ class HomeController < ApplicationController
 		@newsay = params[:l]
 
 		if @initn.blank?
-			@state = State.first
+			@state = State.find_by_s_id(1)
 		else
-			@state = State.find(@initn)
+			@state = State.find_by_s_id(@initn)
 		end
-		@choices = Response.where(:current_state=>@state.id)
+		@choices = Response.where(:current_state=>@state.s_id)
 
 		if @newsay.blank?
 			@talk = @state.toonsay

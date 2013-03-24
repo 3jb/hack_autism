@@ -15,7 +15,7 @@ class HomeController < ApplicationController
 		@choices = Response.where(:current_state=>@state.id)
 
 		if @newsay.blank?
-			@talk = State.find(@initn).toonsay
+			@talk = @state.toonsay
 		else
 			@talk = Response.where(:current_state=>@newsay,:next_state=>@initn).first.next_say
 		end

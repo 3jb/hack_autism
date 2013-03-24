@@ -1,4 +1,3 @@
-var Oracle = {};
 
 
 Oracle.Dialog= new function() {
@@ -7,6 +6,15 @@ Oracle.Dialog= new function() {
 //  $(document).on("click", ".agent", function() {
 //    alert("clicked on agent " + $(this).data("agent-id"));
 //  });
+  my.place= function(id) {
+      $("#canvas").empty();
+      my.placeAgent(id, Oracle.agents[id], 520, 170);
+      my.placePrompt("Well, hello Issac", 50, 35);
+      my.placeOptions(["option_one",
+		       "option_two",
+		       "option_three"], 50, 170);
+  };
+
   
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").

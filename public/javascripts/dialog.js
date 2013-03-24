@@ -6,6 +6,25 @@ Oracle.Dialog= new function() {
 //  $(document).on("click", ".agent", function() {
 //    alert("clicked on agent " + $(this).data("agent-id"));
 //  });
+
+  my.startQuest = function(quest) {
+    console.log(quest);
+    my.place(quest.questId);
+    
+    var questData = Oracle.Quests.getQuest(quest.questId);
+    
+    console.log(questData);
+    // do the quest thing
+  };
+  
+  my.questFinished = function() {
+  
+  };
+  
+  my.renderStep = function(step) {
+    
+  };
+  
   my.place= function(id) {
       $("#canvas").empty();
       my.placeAgent(id, Oracle.agents[id], 520, 170);

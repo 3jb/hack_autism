@@ -12,7 +12,7 @@ Oracle.Quests = new function() {
         name: "Tom"
       },
       2: {
-        questId: null, // 2 = Amy's agentId, null = no quests for Amy
+        questId: 2, // 2 = Amy's agentId, null = no quests for Amy
         name: "Amy"
       }
     }

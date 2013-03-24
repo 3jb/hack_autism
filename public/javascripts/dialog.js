@@ -1,26 +1,17 @@
-
-
 Oracle.Dialog= new function() {
   var my = {};
 
-//  $(document).on("click", ".agent", function() {
-//    alert("clicked on agent " + $(this).data("agent-id"));
-//  });
-
   my.startQuest = function(quest) {
-
-    var questData = Oracle.Quests.getQuest(quest.questId);
     my.place(quest.agent, 
 	     quest.agent.name + "_L_neutral.png");
 
        console.log(quest);
-    my.renderStep(quest, 1);
+    my.renderStep(quest, 0);
     // on click move to next step
-    
   };
   
   my.questFinished = function() {
-  
+    
   };
   
   my.renderStep = function(qData, n_step) {
@@ -34,6 +25,12 @@ Oracle.Dialog= new function() {
     	css("cursor", "pointer").
     	on("click", function() {
         if (value.nextStep < 0) {
+          if (value == -1) {
+            my.questFinished(qData.results);
+          } else if (value == -2) {
+            
+          }
+          
           Oracle.Actions.showMap();
           return;
         }
@@ -41,7 +38,6 @@ Oracle.Dialog= new function() {
 	    }).
 	    appendTo(my_options);
     });
-    
   };
   
   my.place = function(agent, img_path) {
@@ -51,7 +47,6 @@ Oracle.Dialog= new function() {
       my.placeOptions([], 50, 170);
   };
 
-  
   my.placeAgent = function(agent_id, image_path, x, y) {
     $("<img>").
       attr("src", "images/assets/" + image_path).

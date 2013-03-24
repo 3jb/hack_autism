@@ -38,11 +38,13 @@ Oracle.Actions = new function() {
     Oracle.agents = {
       1: {
         name: "Tom",
-        emotionalState: "neutral"
+        emotionalState: "neutral",
+        state: 1
       },
       2: {
         name: "Amy",
-        emotionalState: "neutral"
+        emotionalState: "neutral",
+        state: 1
       }
     }
     

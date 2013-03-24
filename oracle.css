@@ -8,6 +8,11 @@ body {
   cursor: pointer;
 }
 
+.yay {
+  position: absolute;
+  cursor: pointer;
+}
+
 #canvas {
   position: relative;
   background-color: white;

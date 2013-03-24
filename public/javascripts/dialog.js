@@ -8,30 +8,41 @@ Oracle.Dialog= new function() {
 //  });
 
   my.startQuest = function(quest) {
-    console.log(quest);
     my.place(quest.questId);
     
     var questData = Oracle.Quests.getQuest(quest.questId);
+    // init quest one
+    my.renderStep(questData, 1);
+    // on click move to next step
     
-    console.log(questData);
-    // do the quest thing
   };
   
   my.questFinished = function() {
   
   };
   
-  my.renderStep = function(step) {
+  my.renderStep = function(qData, n_step) {
+    var step = qData.step[n_step];
+    $("#prompt").text(step.agentText);
+    var my_options = $("#options").find("ul");
+    my_options.empty();
+    $.each(step.options, function(index, value) {
+      $("<li>").
+	html(value.text).
+	css("cursor", "pointer").
+	on("click", function() {
+	  Oracle.Dialog.renderStep(qData, value.nextState);
+	}).
+	appendTo(my_options);
+    });
     
   };
   
-  my.place= function(id) {
+  my.place = function(id) {
       $("#canvas").empty();
       my.placeAgent(id, Oracle.agents[id], 520, 170);
-      my.placePrompt("Well, hello Issac", 50, 35);
-      my.placeOptions(["option_one",
-		       "option_two",
-		       "option_three"], 50, 170);
+      my.placePrompt("", 50, 35);
+      my.placeOptions([], 50, 170);
   };
 
   
@@ -47,6 +58,7 @@ Oracle.Dialog= new function() {
 
   my.placePrompt = function( promptContent, x, y) {
     $("<div>").
+      attr("id", "prompt").
       html(promptContent).
       addClass("prompt").
       css("left", x).
@@ -55,6 +67,7 @@ Oracle.Dialog= new function() {
   };
   my.placeOptions = function( optArray, x, y) {
     var my_div = $("<div>").
+      attr("id", "options").
       addClass("prompt").
       css("left", x).
       css("top", y).

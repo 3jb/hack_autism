@@ -26,6 +26,7 @@ Oracle.Dialog= new function() {
     	on("click", function() {
         if (value.nextStep < 0) {
           if (value == -1) {
+            $("#ding3_sound")[0].play();
             my.questFinished(qData.results);
           } else if (value == -2) {
             
@@ -35,16 +36,21 @@ Oracle.Dialog= new function() {
           return;
         }
     	  var img_path = qData.agent.name + "_L_";
-    	  switch (value.response_quality) {
-    	    case -2: img_path += "mad.png";
-    		     break;
-    	    case -1: img_path += "sad.png";
-    		     break;
-    	    case 1: img_path += "neutral.png";
-    		     break;
-    	    case 2: img_path += "happy.png";
-    		     break;
-    	  }
+    	  
+        switch (value.response_quality) {
+      	    case -2: img_path += "mad.png";
+              // $("#sad_sound")[0].play();
+              break;
+      	    case -1: img_path += "sad.png";
+              $("#sad_sound")[0].play();
+              break;
+      	    case 1: img_path += "neutral.png";
+      		     $("#ding1_sound")[0].play();
+      		     break;
+      	    case 2: img_path += "happy.png";
+      		     $("#ding2_sound")[0].play();
+      		     break;
+      	  }
   	    Oracle.Dialog.renderStep(qData, value.nextStep);
   	     $("#agent_img").attr("src", "images/assets/" + img_path);
        }).

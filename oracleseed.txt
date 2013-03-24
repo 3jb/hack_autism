@@ -1,0 +1,15 @@
+1;1;Tom will talk to you now.
+2;2;Tom is happy you told him your name.
+3;3;Tom only gives things to people he knows; introduce yourself.
+4;4;Tom will talk to you if you say 'hi.'
+5;5;Tom doesn't like when you're rude. Introduce yourself again.
+6;6;Great job! Now go see Amy.
+7;10;Amy will only talk to people she knows. Introduce yourself.
+8;11;Amy will talk to you now.
+9;12;Amy likes knowing your name.
+10;13;Amy will tell you the password because it is for Tom.
+11;14;Amy wants to know why you need the password.
+12;16;Amy told you the password is Oranges. Let Tom know.
+13;17;You need to tell Tom that you are giving him the password, and isn't it Oranges?
+14;18;Tom needs you to let him know you are talking about the password.;
+15;19;Great job! Now Tom can play some music!

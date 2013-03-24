@@ -1,0 +1,8 @@
+1;"Tom";"Hi.";2;1;3;4
+2;"Tom";"Will you do me a favor?";6;5;7;8
+3;"Tom";"Ask AMY for the password.";9;0;0;0
+4;"Amy";"Hi.";12;11;10;0
+5;"Amy";"I'm Amy.";13;14;0;0
+6;"Amy";"Tell Tom that the password is Oranges.";14;0;0;0
+7;"Tom";"Hi, Isaac.";18;19;16;17
+8;"Tom";"Thanks! You have been a big help.";0;0;0;0

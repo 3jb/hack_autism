@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130323234851) do
+ActiveRecord::Schema.define(:version => 20130324163230) do
 
   create_table "oracles", :force => true do |t|
     t.integer  "resp_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130323234851) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "next_say"
+    t.integer  "r_id"
   end
 
   create_table "states", :force => true do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130323234851) do
     t.integer  "worst_resp"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "s_id"
   end
 
   create_table "users", :force => true do |t|

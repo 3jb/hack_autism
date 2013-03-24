@@ -12,5 +12,10 @@ Oracle.Actions = new function() {
     Oracle.Map.place();
   }
 
+  my.getQuest = function() {
+    $get("/quests/1", );
+  }
+  
+  
   return my;
 }

@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 
 group :development do
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 
 group :production do
